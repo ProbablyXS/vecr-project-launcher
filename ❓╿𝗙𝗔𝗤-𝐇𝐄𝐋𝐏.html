@@ -1,0 +1,1251 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VECR PROJECT - ❓╿&#120281;&#120276;&#120292;-&#119815;&#119812;&#119819;&#119823;</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+            font-weight: 700;
+        }
+
+        body {
+            background-color: #36393e;
+            color: #dcddde;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .markdown {
+            max-width: 100%;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .preserve-whitespace {
+            white-space: pre-wrap;
+        }
+
+        .spoiler-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .spoiler-text--hidden {
+            cursor: pointer;
+            background-color: #202225;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .spoiler-text--hidden:hover {
+            background-color: rgba(32, 34, 37, 0.8);
+        }
+
+        .spoiler-text--hidden::selection {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .quote {
+            display: flex;
+            margin: 0.05em 0;
+        }
+
+        .quote::before {
+            content: "";
+            margin-right: 0.5em;
+            border: 2px solid #4f545c;
+            border-radius: 3px;
+        }
+
+        .pre {
+            background-color: #2f3136;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+        }
+
+        .pre--multiline {
+            margin-top: 0.25em;
+            padding: 0.5em;
+            border: 2px solid #282b30;
+            border-radius: 5px;
+            color: #b9bbbe;
+        }
+
+        .pre--multiline.hljs {
+            background-color: #2f3136;
+            color: #b9bbbe;
+        }
+
+        .pre--inline {
+            padding: 2px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+
+        .mention {
+            border-radius: 3px;
+            padding: 0 2px;
+            color: #dee0fc;
+            background-color: rgba(88, 101, 242, .3);
+            font-weight: 500;
+        }
+
+        .mention:hover {
+            background-color: #5865f2;
+            color: #ffffff
+        }
+
+        .timestamp {
+            border-radius: 3px;
+            padding: 0 2px;
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .emoji {
+            width: 1.325em;
+            height: 1.325em;
+            margin: 0 0.06em;
+            vertical-align: -0.4em;
+        }
+
+        .emoji--small {
+            width: 1em;
+            height: 1em;
+        }
+
+        .emoji--large {
+            width: 2.8em;
+            height: 2.8em;
+        }
+
+        .preamble {
+            display: grid;
+            margin: 0 0.3em 0.6em 0.3em;
+            max-width: 100%;
+            grid-template-columns: auto 1fr;
+        }
+
+        .preamble__guild-icon-container {
+            grid-column: 1;
+        }
+
+        .preamble__guild-icon {
+            max-width: 88px;
+            max-height: 88px;
+        }
+
+        .preamble__entries-container {
+            grid-column: 2;
+            margin-left: 0.6em;
+        }
+
+        .preamble__entry {
+            font-size: 1.4em;
+            color: #ffffff;
+        }
+
+        .preamble__entry--small {
+            font-size: 1em;
+        }
+
+        .chatlog {
+            max-width: 100%;
+        }
+
+        .chatlog__message-group {
+            display: grid;
+            margin: 0 0.6em;
+            padding: 0.9em 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            grid-template-columns: auto 1fr;
+        }
+
+        .chatlog__reference-symbol {
+            grid-column: 1;
+            margin: 8px 4px 4px 18px;
+            border-left: 2px solid #4f545c;
+            border-top: 2px solid #4f545c;
+            border-radius: 8px 0 0 0;
+        }
+
+        .chatlog__reference {
+            display: flex;
+            grid-column: 2;
+            margin-bottom: 0.25em;
+            font-size: 0.875em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            align-items: center;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-avatar {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.25em;
+        }
+
+        .chatlog__reference-name {
+            margin-right: 0.3em;
+            font-weight: 600;
+        }
+
+        .chatlog__reference-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-content a:hover {
+            text-decoration: none;
+        }
+
+        .chatlog__reference-link {
+            cursor: pointer;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-link * {
+            display: inline;
+            pointer-events: none;
+        }
+
+        .chatlog__reference-link:hover {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-link:hover *:not(.spoiler-text) {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-edited-timestamp {
+            margin-left: 0.25em;
+            font-size: 0.8em;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__author-avatar-container {
+            grid-column: 1;
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+        }
+
+        .chatlog__author-avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .chatlog__messages {
+            grid-column: 2;
+            min-width: 50%;
+            direction: ltr;
+        }
+
+        .chatlog__author-name {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .chatlog__timestamp {
+            margin-left: 0.3em;
+            font-size: 0.75em;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__message {
+            padding: 0.1em 0.3em;
+            margin: 0 -0.3em;
+            background-color: transparent;
+            transition: background-color 1s ease;
+        }
+
+        .chatlog__message--highlighted {
+            background-color: rgba(114, 137, 218, 0.2);
+        }
+
+        .chatlog__message--pinned {
+            background-color: rgba(249, 168, 37, 0.05);
+        }
+
+        .chatlog__content {
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+
+        .chatlog__edited-timestamp {
+            margin-left: 0.15em;
+            font-size: 0.8em;
+        }
+
+        .chatlog__attachment {
+            display: inline-block;
+            position: relative;
+            margin-top: 0.3em;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden {
+            cursor: pointer;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatlog__attachment--hidden * {
+            pointer-events: none;
+        }
+
+        .chatlog__attachment-spoiler-caption {
+            display: none;
+            z-index: 999;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.4em 0.8em;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            color: #dcddde;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-spoiler-caption {
+            display: block;
+        }
+
+        .chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption {
+            color: #fff;
+        }
+
+        .chatlog__attachment-media {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-media {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic {
+            width: 100%;
+            max-width: 520px;
+            height: 40px;
+            padding: 10px;
+            background-color: #2f3136;
+            border: 1px solid #292b2f;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-generic {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic-icon {
+            float: left;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .chatlog__attachment-generic-size {
+            color: #72767d;
+            font-size: 12px;
+        }
+
+        .chatlog__attachment-generic-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__edited-timestamp {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__embed {
+            display: flex;
+            margin-top: 0.3em;
+            max-width: 520px;
+        }
+
+        .chatlog__embed-color-pill {
+            flex-shrink: 0;
+            width: 0.25em;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .chatlog__embed-color-pill--default {
+            background-color: #202225;
+        }
+
+        .chatlog__embed-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5em 0.6em;
+            background-color: rgba(46, 48, 54, 0.3);
+            border: 1px solid rgba(46, 48, 54, 0.6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chatlog__embed-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .chatlog__embed-text {
+            flex: 1;
+        }
+
+        .chatlog__embed-author {
+            display: flex;
+            margin-bottom: 0.3em;
+            align-items: center;
+        }
+
+        .chatlog__embed-author-icon {
+            margin-right: 0.5em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .chatlog__embed-author-name {
+            font-size: 0.875em;
+            font-weight: 600;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: #ffffff
+        }
+
+        .chatlog__embed-author-name-link {
+            color: #ffffff;
+        }
+
+        .chatlog__embed-title {
+            margin-bottom: 0.2em;
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-description {
+            font-weight: 500;
+            font-size: 0.85em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5em;
+        }
+
+        .chatlog__embed-field {
+            flex: 0;
+            min-width: 100%;
+            max-width: 506px;
+            padding-top: 0.6em;
+            font-size: 0.875em;
+        }
+
+        .chatlog__embed-field--inline {
+            flex: 1;
+            flex-basis: auto;
+            min-width: 150px;
+        }
+
+        .chatlog__embed-field-name {
+            margin-bottom: 0.2em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-field-value {
+            font-weight: 500;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-thumbnail {
+            flex: 0;
+            margin-left: 1.2em;
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-image-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-image {
+            max-width: 500px;
+            max-height: 400px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-footer {
+            margin-top: 0.6em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-footer-icon {
+            margin-right: 0.2em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .chatlog__embed-footer-text {
+            vertical-align: middle;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-plainimage {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-spotify {
+            border: 0;
+        }
+
+        .chatlog__embed-youtube-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-youtube {
+            border: 0;
+            border-radius: 3px;
+        }
+
+        .chatlog__reactions {
+            display: flex;
+        }
+
+        .chatlog__reaction {
+            display: flex;
+            align-items: center;
+            margin: 0.35em 0.1em 0.1em 0;
+            padding: .125rem .375rem;
+            background-color: #2f3136;
+            border-radius: 8px;
+            border-color: transparent;
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .chatlog__reaction:hover {
+            border-color: hsla(0,0%,100%,.2);
+            border-width: 1px;
+            border-style: solid;
+            background-color: transparent;
+        }
+
+        .chatlog__reaction-count {
+            min-width: 9px;
+            margin-left: 0.35em;
+            font-size: 0.875em;
+            color: #b9bbbe;
+        }
+
+        .chatlog__reaction:hover .chatlog__reaction-count {
+            color: #dcddde;
+        }
+
+        .chatlog__bot-tag {
+            position: relative;
+            top: -.1em;
+            margin-left: 0.3em;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            line-height: 1.3;
+            background-color: #5865F2;
+            color: #ffffff;
+            font-size: 0.625em;
+            font-weight: 500;
+        }
+
+        .postamble {
+            margin: 1.4em 0.3em 0.6em 0.3em;
+            padding: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .postamble__entry {
+            color: #ffffff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler-text--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler-text--hidden');
+            }
+            if (element && element.classList.contains('chatlog__attachment--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__attachment--hidden');
+            }
+        }
+    </script>
+
+    <svg style="display: none">
+        <symbol id="icon-attachment" viewBox="0 0 720 960">
+            <path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z" />
+            <path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z" />
+            <path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z" />
+            <path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z" />
+        </symbol>
+    </svg>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/887774468074774529/22be35b0de884e39e3c4133fa9bb6588.png" alt="Guild icon" loading="lazy">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">VECR PROJECT</div>
+        <div class="preamble__entry">Information / ❓╿&#120281;&#120276;&#120292;-&#119815;&#119812;&#119819;&#119823;</div>
+
+
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">02-Oct-21 07:53 PM</span>
+
+            <div class="chatlog__message " data-message-id="893918709125623839" id="message-893918709125623839" title="Message sent: 02-Oct-21 07:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-fix">[&#120281;&#120319;&#120306;&#120318;&#120322;&#120306;&#120315;&#120321;&#120313;&#120326; &#120276;&#120320;&#120312;&#120306;&#120305; &#120292;&#120322;&#120306;&#120320;&#120321;&#120310;&#120316;&#120315;&#120320;]</div></strong></span>
+
+                                <span class="chatlog__edited-timestamp" title="02-Oct-21 07:55 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="893919717222383658" id="message-893919717222383658" title="Message sent: 02-Oct-21 07:57 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#120290;&#120288;&#120282; !!! &#120297;&#120310;&#120319;&#120322;&#120320; ...</div></strong>
+Yes certain behaviours of our software might be considered as malicious by your antivirus. They are false positives.
+
+Our software is designed to simulate mouse movement and keyboard typing to actually play the game. This is a common trigger for anti-virus engines.
+
+This software is a external program and the software don&#39;t writing anything into the game memory for safe the ban only your gameplay affect your ban acc.
+
+In order to work properly, the software is using your network traffic to check if an update is available and to grant full access to <span class="mention" style="color: rgb(230, 126, 34); background-color: rgba(230, 126, 34, 0.1);">@COFFEE MEMBER</span> users.
+
+The software is also creating/writing and reading a configuration file in order to save your settings.
+
+The software source code is obfuscated to prevent it being easily stolen. This alone is enough to trigger multiple anti-virus engines.
+
+If after all you remain unconvinced, dont use this software.</span>
+
+                                <span class="chatlog__edited-timestamp" title="02-Oct-21 08:00 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="893921089292492821" id="message-893921089292492821" title="Message sent: 02-Oct-21 08:03 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#120298;&#120309;&#120302;&#120321; &#120310;&#120320; &#120321;&#120309;&#120306; &#120317;&#120319;&#120310;&#120304;&#120306; &#120316;&#120307; &#119811;&#119848;&#119847;&#119834;&#119853;&#119848;&#119851; &#120323;&#120306;&#120319;&#120320;&#120310;&#120316;&#120315; ?</div></strong>
+<a href="https://vecrproject.com/#prices">https://vecrproject.com/#prices</a>
+
+Please note your software license is linked with your current computer. If you are willing to use the software on another computer you will have to open a ticket</span>
+
+                                <span class="chatlog__edited-timestamp" title="01-Nov-21 02:16 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://vecrproject.com/">
+                                                        <div class="markdown preserve-whitespace">VECR PROJECT</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">VECR PROJECT - Your Cheats and Hacks for Plutonium/XLAB/SM2 with different features.</div>
+                                            </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="893921836902006814" id="message-893921836902006814" title="Message sent: 02-Oct-21 08:06 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#120298;&#120309;&#120306;&#120319;&#120306; &#120304;&#120302;&#120315; &#120284; &#120305;&#120316;&#120324;&#120315;&#120313;&#120316;&#120302;&#120305; &#120321;&#120309;&#120306; &#120313;&#120302;&#120321;&#120306;&#120320;&#120321; &#119852;&#119848;&#119839;&#119853;&#119856;&#119834;&#119851;&#119838; &#120322;&#120317;&#120305;&#120302;&#120321;&#120306; ?</div></strong>
+Check out the <strong><span class="mention">#&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</span></strong> channel</span>
+
+                                <span class="chatlog__edited-timestamp" title="02-Oct-21 09:10 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">02-Oct-21 09:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="893939731040190494" id="message-893939731040190494" title="Message sent: 02-Oct-21 09:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#119815;&#119848;&#119856; &#119842; &#119836;&#119834;&#119847; &#119854;&#119847;&#119835;&#119834;&#119847; &#119846;&#119838; ?</div></strong>
+If you have getting ban from a specified server you can unban you with create another account and changing your IP
+
+If you have ban from the owner server a good software exist for spoof your computer : Coming Soon</span>
+
+                                <span class="chatlog__edited-timestamp" title="01-Nov-21 02:45 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="893940530122203176" id="message-893940530122203176" title="Message sent: 02-Oct-21 09:20 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#120295;&#120309;&#120306; &#120320;&#120316;&#120307;&#120321;&#120324;&#120302;&#120319;&#120306; &#120305;&#120316;&#120306;&#120320; &#120315;&#120316;&#120321; &#120320;&#120321;&#120302;&#120319;&#120321; &#120304;&#120316;&#120319;&#120319;&#120306;&#120304;&#120321;&#120313;&#120326; ?</div></strong>
+Make sure your game is WINDOWED MODE.
+Press F1 after overlay appear.
+
+------------------------------------------------------------
+
+If you stuck on the LOADING button, you can make this manipulation (We using google server for sharing files, database)
+
+1) Open Control Panel.
+2) Click on Network and Internet.
+3) Click on Network and Sharing Center.
+4) Click the Change adapter settings option in the left pane.
+5) Right-click the network interface that connects Windows 10 to the internet, and select the Properties option.
+6) Quick tip: You&#39;ll know which adapter is connected to the network because it won&#39;t have a &quot;Disabled&quot; or &quot;Network cable unplugged&quot; label.
+
+7) Select and check the Internet Protocol Version 4 (TCP/IPv4) option.
+8) Click the Properties button.
+9) Select the Use the following DNS server addresses option.
+
+Quick note: When you select the option to specify the DNS settings manually, the device will continue to receive the TCP/IP address from the DHCP server (router).
+
+10) Type your &quot;preferred&quot; and &quot;alternate&quot; DNS addresses.
+If you want to use Google Public DNS you can use these settings:
+Google Public DNS: 8.8.8.8 and 8.8.4.4
+(Optional) Click the Advanced button.
+
+11) Click the DNS tab.
+12) Click the Add button.
+13) Specify the alternate DNS server address.
+14) Click the Add button.
+
+Quick tip: In addition to adding more addresses, from this tab, you can also edit and remove resolvers, and you even have an option on the side to change their priority.
+
+15) Click the OK button.
+16) Click the Close button.
+Once you complete the steps, the device will immediately start using the DNS settings that you specified.</span>
+
+                                <span class="chatlog__edited-timestamp" title="11-Oct-21 04:18 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">04-Oct-21 11:35 AM</span>
+
+            <div class="chatlog__message " data-message-id="894518020075036685" id="message-894518020075036685" title="Message sent: 04-Oct-21 11:35 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#119830;&#119841;&#119838;&#119851;&#119838; &#119834;&#119851;&#119838; &#119834;&#119845;&#119845; &#119853;&#119841;&#119838; &#119848;&#119853;&#119841;&#119838;&#119851; &#119848;&#119849;&#119853;&#119842;&#119848;&#119847;&#119852;?</div></strong>
+<a href="https://vecrproject.com/#features">https://vecrproject.com/#features</a></span>
+
+                                <span class="chatlog__edited-timestamp" title="01-Nov-21 02:44 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://vecrproject.com/">
+                                                        <div class="markdown preserve-whitespace">VECR PROJECT</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">VECR PROJECT - Your Cheats and Hacks for Plutonium/XLAB/SM2 with different features.</div>
+                                            </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="894518438523965460" id="message-894518438523965460" title="Message sent: 04-Oct-21 11:36 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#119815;&#119848;&#119856; &#119846;&#119854;&#119836;&#119841; &#119842;&#119852; &#119853;&#119841;&#119838; &#119837;&#119848;&#119847;&#119848;&#119851; &#119848;&#119849;&#119853;&#119842;&#119848;&#119847;?</div></strong>
+<a href="https://vecrproject.com/#prices">https://vecrproject.com/#prices</a></span>
+
+                                <span class="chatlog__edited-timestamp" title="01-Nov-21 02:17 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://vecrproject.com/">
+                                                        <div class="markdown preserve-whitespace">VECR PROJECT</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">VECR PROJECT - Your Cheats and Hacks for Plutonium/XLAB/SM2 with different features.</div>
+                                            </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">04-Oct-21 11:53 PM</span>
+
+            <div class="chatlog__message " data-message-id="894703721823486052" id="message-894703721823486052" title="Message sent: 04-Oct-21 11:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#119815;&#119848;&#119856; &#119853;&#119848; &#119842;&#119847;&#119852;&#119853;&#119834;&#119845;&#119845; &#119853;&#119841;&#119838; &#119852;&#119848;&#119839;&#119853;&#119856;&#119834;&#119851;&#119838; ?</div></strong>
+<a href="https://www.youtube.com/watch?v=Pvowz1EPKQk">https://www.youtube.com/watch?v=Pvowz1EPKQk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,0,255)"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+                                            <div class="chatlog__embed-author">
+
+                                                    <span class="chatlog__embed-author-name">
+                                                            <a class="chatlog__embed-author-name-link" href="https://www.youtube.com/channel/UCqmGjYld0KAhoYZYHH4anwQ">XsplitS</a>
+                                                    </span>
+                                            </div>
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://www.youtube.com/watch?v=Pvowz1EPKQk">
+                                                        <div class="markdown preserve-whitespace">HOW TO INSTALL VECR PROJECT FOR PLUTONIUM | XLAB | SM2 ✅</div>
+                                                    </a>
+                                            </div>
+
+                                        <div class="chatlog__embed-youtube-container">
+                                            <iframe class="chatlog__embed-youtube" src="https://www.youtube.com/embed/Pvowz1EPKQk" width="400" height="225"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">11-Oct-21 04:21 AM</span>
+
+            <div class="chatlog__message " data-message-id="896945534827376661" id="message-896945534827376661" title="Message sent: 11-Oct-21 04:21 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#119812;&#119851;&#119851;&#119848;&#119851; &#119846;&#119838;&#119852;&#119852;&#119834;&#119840;&#119838;: &#119810;&#119834;&#119847;&#119847;&#119848;&#119853; &#119836;&#119848;&#119847;&#119839;&#119842;&#119840;&#119854;&#119851;&#119838; &#119858;&#119848;&#119854;&#119851; &#119823;&#119810; &#119839;&#119848;&#119851; &#119834;&#119836;&#119853;&#119842;&#119855;&#119834;&#119853;&#119842;&#119848;&#119847;</div></strong>
+<a href="https://www.thewindowsclub.com/how-to-repair-or-rebuild-the-wmi-repository-on-windows-10">https://www.thewindowsclub.com/how-to-repair-or-rebuild-the-wmi-repository-on-windows-10</a>
+<a href="https://social.technet.microsoft.com/Forums/en-US/f5b87bd2-3948-4261-b3d3-56d3fd5d1f47/wmic-csprodct-get-uuid-failure?forum=winservergen">https://social.technet.microsoft.com/Forums/en-US/f5b87bd2-3948-4261-b3d3-56d3fd5d1f47/wmic-csprodct-get-uuid-failure?forum=winservergen</a>
+<a href="https://guidooliveira.com/wmi-fixer-tool/">https://guidooliveira.com/wmi-fixer-tool/</a>
+<a href="https://github.com/guidooliveira/GuidoOliveira.com/tree/master/WMI%2520Fixer">https://github.com/guidooliveira/GuidoOliveira.com/tree/master/WMI%20Fixer</a></span>
+
+                                <span class="chatlog__edited-timestamp" title="11-Oct-21 04:27 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+                                            <div class="chatlog__embed-author">
+
+                                                    <span class="chatlog__embed-author-name">
+                                                            <a class="chatlog__embed-author-name-link" href="https://www.thewindowsclub.com/author/anand">AnandK@TWC</a>
+                                                    </span>
+                                            </div>
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://www.thewindowsclub.com/how-to-repair-or-rebuild-the-wmi-repository-on-windows-10">
+                                                        <div class="markdown preserve-whitespace">How to repair or rebuild the WMI Repository on Windows 11/10</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Learn how to repair or rebuild the WMI Repository on Windows 10.WMI Repository failure or corruption could result in Provider Load Failure.</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/oPUbsXpuBGuci0EfnguMAan5dFDIokiLAfzM95nhLlw/https/www.thewindowsclub.com/wp-content/uploads/2019/02/WMI-Fixer-Tool.png">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/oPUbsXpuBGuci0EfnguMAan5dFDIokiLAfzM95nhLlw/https/www.thewindowsclub.com/wp-content/uploads/2019/02/WMI-Fixer-Tool.png" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://guidooliveira.com/wmi-fixer-tool/">
+                                                        <div class="markdown preserve-whitespace">WMI Fixer Tool</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Ol&#225; a todos! H&#225; um tempo atr&#225;s tive um problema s&#233;rio em um Domain Controller que havia sito restaurado de uma Snapshot a quente no VMware, […]</div>
+                                            </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill" style="background-color: rgba(30,35,39,255)"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://github.com/guidooliveira/GuidoOliveira.com/tree/master/WMI%20Fixer">
+                                                        <div class="markdown preserve-whitespace">GuidoOliveira.com/WMI Fixer at master &#183; guidooliveira/GuidoOliveira...</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">GuidoOliveira.com public github repository. Contribute to guidooliveira/GuidoOliveira.com development by creating an account on GitHub.</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/QEfFWyCdmzfTDYDOmVQ61iZgOnis-iBhXOvJYoS3SU0/https/opengraph.githubassets.com/26ccb8e38de75b0d184bceadf4336c554d3ff71628054ca86aa9d78d8e77a392/guidooliveira/GuidoOliveira.com">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/QEfFWyCdmzfTDYDOmVQ61iZgOnis-iBhXOvJYoS3SU0/https/opengraph.githubassets.com/26ccb8e38de75b0d184bceadf4336c554d3ff71628054ca86aa9d78d8e77a392/guidooliveira/GuidoOliveira.com" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">01-Nov-21 02:48 PM</span>
+
+            <div class="chatlog__message " data-message-id="904728553524969503" id="message-904728553524969503" title="Message sent: 01-Nov-21 02:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#119815;&#119848;&#119856; &#119842; &#119836;&#119834;&#119847; &#119851;&#119838;&#119852;&#119838;&#119853; &#119846;&#119858; &#119819;&#119816;&#119810;&#119812;&#119821;&#119826;&#119812; ?</div></strong>
+Send your problem from this formular: <a href="https://vecrproject.com/#contact">https://vecrproject.com/#contact</a>
+We will get back to you within 24 hours.</span>
+
+                                <span class="chatlog__edited-timestamp" title="03-Nov-21 02:21 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://vecrproject.com/">
+                                                        <div class="markdown preserve-whitespace">VECR PROJECT</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">VECR PROJECT - Your Cheats and Hacks for Plutonium/XLAB/SM2 with different features.</div>
+                                            </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/798307015121567744/03c3b799ccc3d4c219d715ceecdf1e2f.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Probably#9685" data-user-id="798307015121567744" style="color: rgb(231,255,0)">Probably</span>
+
+
+        <span class="chatlog__timestamp">18-Feb-22 02:30 AM</span>
+
+            <div class="chatlog__message " data-message-id="944043126073475082" id="message-944043126073475082" title="Message sent: 18-Feb-22 02:30 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong><div class="pre pre--multiline language-md">#&#119808;&#119836;&#119836;&#119838;&#119852;&#119852; &#119836;&#119848;&#119837;&#119838; &#119847;&#119848;&#119853; &#119856;&#119848;&#119851;&#119844;&#119842;&#119847;&#119840; ?</div></strong>
+• Restart the launcher
+• Delete the “Data” folder
+• Wait approximately 5 minutes</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 12 message(s)</div>
+</div>
+
+</body>
+
+</html>

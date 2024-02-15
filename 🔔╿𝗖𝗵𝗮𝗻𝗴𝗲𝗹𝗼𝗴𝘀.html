@@ -1,0 +1,1344 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VECR PROJECT - &#128276;╿&#120278;&#120309;&#120302;&#120315;&#120308;&#120306;&#120313;&#120316;&#120308;&#120320;</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+            font-weight: 700;
+        }
+
+        body {
+            background-color: #36393e;
+            color: #dcddde;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .markdown {
+            max-width: 100%;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .preserve-whitespace {
+            white-space: pre-wrap;
+        }
+
+        .spoiler-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .spoiler-text--hidden {
+            cursor: pointer;
+            background-color: #202225;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .spoiler-text--hidden:hover {
+            background-color: rgba(32, 34, 37, 0.8);
+        }
+
+        .spoiler-text--hidden::selection {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .quote {
+            display: flex;
+            margin: 0.05em 0;
+        }
+
+        .quote::before {
+            content: "";
+            margin-right: 0.5em;
+            border: 2px solid #4f545c;
+            border-radius: 3px;
+        }
+
+        .pre {
+            background-color: #2f3136;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+        }
+
+        .pre--multiline {
+            margin-top: 0.25em;
+            padding: 0.5em;
+            border: 2px solid #282b30;
+            border-radius: 5px;
+            color: #b9bbbe;
+        }
+
+        .pre--multiline.hljs {
+            background-color: #2f3136;
+            color: #b9bbbe;
+        }
+
+        .pre--inline {
+            padding: 2px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+
+        .mention {
+            border-radius: 3px;
+            padding: 0 2px;
+            color: #dee0fc;
+            background-color: rgba(88, 101, 242, .3);
+            font-weight: 500;
+        }
+
+        .mention:hover {
+            background-color: #5865f2;
+            color: #ffffff
+        }
+
+        .timestamp {
+            border-radius: 3px;
+            padding: 0 2px;
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .emoji {
+            width: 1.325em;
+            height: 1.325em;
+            margin: 0 0.06em;
+            vertical-align: -0.4em;
+        }
+
+        .emoji--small {
+            width: 1em;
+            height: 1em;
+        }
+
+        .emoji--large {
+            width: 2.8em;
+            height: 2.8em;
+        }
+
+        .preamble {
+            display: grid;
+            margin: 0 0.3em 0.6em 0.3em;
+            max-width: 100%;
+            grid-template-columns: auto 1fr;
+        }
+
+        .preamble__guild-icon-container {
+            grid-column: 1;
+        }
+
+        .preamble__guild-icon {
+            max-width: 88px;
+            max-height: 88px;
+        }
+
+        .preamble__entries-container {
+            grid-column: 2;
+            margin-left: 0.6em;
+        }
+
+        .preamble__entry {
+            font-size: 1.4em;
+            color: #ffffff;
+        }
+
+        .preamble__entry--small {
+            font-size: 1em;
+        }
+
+        .chatlog {
+            max-width: 100%;
+        }
+
+        .chatlog__message-group {
+            display: grid;
+            margin: 0 0.6em;
+            padding: 0.9em 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            grid-template-columns: auto 1fr;
+        }
+
+        .chatlog__reference-symbol {
+            grid-column: 1;
+            margin: 8px 4px 4px 18px;
+            border-left: 2px solid #4f545c;
+            border-top: 2px solid #4f545c;
+            border-radius: 8px 0 0 0;
+        }
+
+        .chatlog__reference {
+            display: flex;
+            grid-column: 2;
+            margin-bottom: 0.25em;
+            font-size: 0.875em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            align-items: center;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-avatar {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.25em;
+        }
+
+        .chatlog__reference-name {
+            margin-right: 0.3em;
+            font-weight: 600;
+        }
+
+        .chatlog__reference-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-content a:hover {
+            text-decoration: none;
+        }
+
+        .chatlog__reference-link {
+            cursor: pointer;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-link * {
+            display: inline;
+            pointer-events: none;
+        }
+
+        .chatlog__reference-link:hover {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-link:hover *:not(.spoiler-text) {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-edited-timestamp {
+            margin-left: 0.25em;
+            font-size: 0.8em;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__author-avatar-container {
+            grid-column: 1;
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+        }
+
+        .chatlog__author-avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .chatlog__messages {
+            grid-column: 2;
+            min-width: 50%;
+            direction: ltr;
+        }
+
+        .chatlog__author-name {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .chatlog__timestamp {
+            margin-left: 0.3em;
+            font-size: 0.75em;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__message {
+            padding: 0.1em 0.3em;
+            margin: 0 -0.3em;
+            background-color: transparent;
+            transition: background-color 1s ease;
+        }
+
+        .chatlog__message--highlighted {
+            background-color: rgba(114, 137, 218, 0.2);
+        }
+
+        .chatlog__message--pinned {
+            background-color: rgba(249, 168, 37, 0.05);
+        }
+
+        .chatlog__content {
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+
+        .chatlog__edited-timestamp {
+            margin-left: 0.15em;
+            font-size: 0.8em;
+        }
+
+        .chatlog__attachment {
+            display: inline-block;
+            position: relative;
+            margin-top: 0.3em;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden {
+            cursor: pointer;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatlog__attachment--hidden * {
+            pointer-events: none;
+        }
+
+        .chatlog__attachment-spoiler-caption {
+            display: none;
+            z-index: 999;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.4em 0.8em;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            color: #dcddde;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-spoiler-caption {
+            display: block;
+        }
+
+        .chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption {
+            color: #fff;
+        }
+
+        .chatlog__attachment-media {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-media {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic {
+            width: 100%;
+            max-width: 520px;
+            height: 40px;
+            padding: 10px;
+            background-color: #2f3136;
+            border: 1px solid #292b2f;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-generic {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic-icon {
+            float: left;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .chatlog__attachment-generic-size {
+            color: #72767d;
+            font-size: 12px;
+        }
+
+        .chatlog__attachment-generic-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__edited-timestamp {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__embed {
+            display: flex;
+            margin-top: 0.3em;
+            max-width: 520px;
+        }
+
+        .chatlog__embed-color-pill {
+            flex-shrink: 0;
+            width: 0.25em;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .chatlog__embed-color-pill--default {
+            background-color: #202225;
+        }
+
+        .chatlog__embed-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5em 0.6em;
+            background-color: rgba(46, 48, 54, 0.3);
+            border: 1px solid rgba(46, 48, 54, 0.6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chatlog__embed-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .chatlog__embed-text {
+            flex: 1;
+        }
+
+        .chatlog__embed-author {
+            display: flex;
+            margin-bottom: 0.3em;
+            align-items: center;
+        }
+
+        .chatlog__embed-author-icon {
+            margin-right: 0.5em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .chatlog__embed-author-name {
+            font-size: 0.875em;
+            font-weight: 600;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: #ffffff
+        }
+
+        .chatlog__embed-author-name-link {
+            color: #ffffff;
+        }
+
+        .chatlog__embed-title {
+            margin-bottom: 0.2em;
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-description {
+            font-weight: 500;
+            font-size: 0.85em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5em;
+        }
+
+        .chatlog__embed-field {
+            flex: 0;
+            min-width: 100%;
+            max-width: 506px;
+            padding-top: 0.6em;
+            font-size: 0.875em;
+        }
+
+        .chatlog__embed-field--inline {
+            flex: 1;
+            flex-basis: auto;
+            min-width: 150px;
+        }
+
+        .chatlog__embed-field-name {
+            margin-bottom: 0.2em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-field-value {
+            font-weight: 500;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-thumbnail {
+            flex: 0;
+            margin-left: 1.2em;
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-image-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-image {
+            max-width: 500px;
+            max-height: 400px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-footer {
+            margin-top: 0.6em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-footer-icon {
+            margin-right: 0.2em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .chatlog__embed-footer-text {
+            vertical-align: middle;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-plainimage {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-spotify {
+            border: 0;
+        }
+
+        .chatlog__embed-youtube-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-youtube {
+            border: 0;
+            border-radius: 3px;
+        }
+
+        .chatlog__reactions {
+            display: flex;
+        }
+
+        .chatlog__reaction {
+            display: flex;
+            align-items: center;
+            margin: 0.35em 0.1em 0.1em 0;
+            padding: .125rem .375rem;
+            background-color: #2f3136;
+            border-radius: 8px;
+            border-color: transparent;
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .chatlog__reaction:hover {
+            border-color: hsla(0,0%,100%,.2);
+            border-width: 1px;
+            border-style: solid;
+            background-color: transparent;
+        }
+
+        .chatlog__reaction-count {
+            min-width: 9px;
+            margin-left: 0.35em;
+            font-size: 0.875em;
+            color: #b9bbbe;
+        }
+
+        .chatlog__reaction:hover .chatlog__reaction-count {
+            color: #dcddde;
+        }
+
+        .chatlog__bot-tag {
+            position: relative;
+            top: -.1em;
+            margin-left: 0.3em;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            line-height: 1.3;
+            background-color: #5865F2;
+            color: #ffffff;
+            font-size: 0.625em;
+            font-weight: 500;
+        }
+
+        .postamble {
+            margin: 1.4em 0.3em 0.6em 0.3em;
+            padding: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .postamble__entry {
+            color: #ffffff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler-text--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler-text--hidden');
+            }
+            if (element && element.classList.contains('chatlog__attachment--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__attachment--hidden');
+            }
+        }
+    </script>
+
+    <svg style="display: none">
+        <symbol id="icon-attachment" viewBox="0 0 720 960">
+            <path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z" />
+            <path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z" />
+            <path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z" />
+            <path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z" />
+        </symbol>
+    </svg>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/887774468074774529/22be35b0de884e39e3c4133fa9bb6588.png" alt="Guild icon" loading="lazy">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">VECR PROJECT</div>
+        <div class="preamble__entry">Information / &#128276;╿&#120278;&#120309;&#120302;&#120315;&#120308;&#120306;&#120313;&#120316;&#120308;&#120320;</div>
+
+            <div class="preamble__entry preamble__entry--small"><img loading="lazy" class="emoji " alt="𝗖" title="𝗖" src="https://twemoji.maxcdn.com/2/svg/1d5d6.svg"><img loading="lazy" class="emoji " alt="𝗵" title="𝗵" src="https://twemoji.maxcdn.com/2/svg/1d5f5.svg"><img loading="lazy" class="emoji " alt="𝗮" title="𝗮" src="https://twemoji.maxcdn.com/2/svg/1d5ee.svg"><img loading="lazy" class="emoji " alt="𝗻" title="𝗻" src="https://twemoji.maxcdn.com/2/svg/1d5fb.svg"><img loading="lazy" class="emoji " alt="𝗴" title="𝗴" src="https://twemoji.maxcdn.com/2/svg/1d5f4.svg"><img loading="lazy" class="emoji " alt="𝗲" title="𝗲" src="https://twemoji.maxcdn.com/2/svg/1d5f2.svg"><img loading="lazy" class="emoji " alt="𝗹" title="𝗹" src="https://twemoji.maxcdn.com/2/svg/1d5f9.svg"><img loading="lazy" class="emoji " alt="𝗼" title="𝗼" src="https://twemoji.maxcdn.com/2/svg/1d5fc.svg"><img loading="lazy" class="emoji " alt="𝗴" title="𝗴" src="https://twemoji.maxcdn.com/2/svg/1d5f4.svg"><img loading="lazy" class="emoji " alt="𝘀" title="𝘀" src="https://twemoji.maxcdn.com/2/svg/1d600.svg"> for VECR PROJECT</div>
+
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">17-Sep-21 02:08 PM</span>
+
+            <div class="chatlog__message " data-message-id="888395886403661825" id="message-888395886403661825" title="Message sent: 17-Sep-21 02:08 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119826;&#119822;&#119813;&#119827;&#119830;&#119808;&#119825;&#119812;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120782;.&#120787;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120783;&#120789;/&#120782;&#120791;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+✅ IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+✅ GLOBAL CODE OPTIMIZATION / CLEANUP
+✅ EDITED AND UPGRADING CONFIG.INI
+✅ MAJOR BUG FIXES
+✅ OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+✅ SWITCHING HARDWARE ACCELERATION GRAPHICS FOR BEST OPTIMIZATION</span>
+
+                                <span class="chatlog__edited-timestamp" title="21-Sep-21 05:12 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="eyes">
+                                <img class="emoji emoji--small" alt="&#128064;" src="https://twemoji.maxcdn.com/2/svg/1f440.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">15</span>
+                            </div>
+                            <div class="chatlog__reaction" title="flandre_concerned">
+                                <img class="emoji emoji--small" alt="flandre_concerned" src="https://cdn.discordapp.com/emojis/887809262003314699.png" loading="lazy">
+                                <span class="chatlog__reaction-count">6</span>
+                            </div>
+                            <div class="chatlog__reaction" title="pepewow">
+                                <img class="emoji emoji--small" alt="pepewow" src="https://cdn.discordapp.com/emojis/887809262464671794.png" loading="lazy">
+                                <span class="chatlog__reaction-count">7</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">21-Sep-21 05:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="889891814566428742" id="message-889891814566428742" title="Message sent: 21-Sep-21 05:12 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119826;&#119822;&#119813;&#119827;&#119830;&#119808;&#119825;&#119812;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120782;.&#120788;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120784;&#120783;/&#120782;&#120791;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED NEW DRAWING FORM FOR ESP
+
+✅ EDITED AIMBOT FOV CIRCLE SIZE
+✅ MAJOR BUG FIXES
+✅ EDITED SECURITY LEVEL
+✅ GLOBAL CODE OPTIMIZATION / CLEANUP
+
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED ESP NOT HIDE PROPERLY
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED DISTANCE CALCULATION FOR ESP DISTANCE</span>
+
+                                <span class="chatlog__edited-timestamp" title="21-Sep-21 07:27 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">21-Sep-21 07:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="889925731075911700" id="message-889925731075911700" title="Message sent: 21-Sep-21 07:27 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119826;&#119822;&#119813;&#119827;&#119830;&#119808;&#119825;&#119812;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120782;.&#120789;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120784;&#120783;/&#120782;&#120791;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED VSAT INTO MISC PAGE
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED MISC PAGE FOR FREE VERSION
+
+✅ EDITED CROSSHAIR PAGE TO MISC PAGE</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">24-Sep-21 04:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="890973309104181279" id="message-890973309104181279" title="Message sent: 24-Sep-21 04:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119819;&#119808;&#119828;&#119821;&#119810;&#119815;&#119812;&#119825;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120782;.&#120785;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120784;&#120786;/&#120782;&#120791;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> UPDATE PREVENTION CHECK
+
+✅ GLOBAL CODE OPTIMIZATION / CLEANUP
+✅ OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED SOME BUGS OCCURING ON LAUNCHER STARTUP</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">24-Sep-21 05:00 PM</span>
+
+            <div class="chatlog__message " data-message-id="890976038497169418" id="message-890976038497169418" title="Message sent: 24-Sep-21 05:00 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119826;&#119822;&#119813;&#119827;&#119830;&#119808;&#119825;&#119812;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120782;.&#120790;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120784;&#120786;/&#120782;&#120791;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED  FOCUSED WINDOWS ANALIZING CHECK
+
+✅ EDITED PRESET CONFIG
+✅ EDITED SECURITY LEVEL
+✅ CODE OPTIMIZATION
+✅ EDITED INFORMATION MESSAGES
+✅ IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+✅ OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED MENU DO NOT APPEAR PROPERLY
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED A BUG WITH AIMBOT</span>
+
+                                <span class="chatlog__edited-timestamp" title="24-Sep-21 06:23 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">29-Sep-21 06:46 PM</span>
+
+            <div class="chatlog__message " data-message-id="892814630202789998" id="message-892814630202789998" title="Message sent: 29-Sep-21 06:46 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119826;&#119822;&#119813;&#119827;&#119830;&#119808;&#119825;&#119812;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120782;.&#120791;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120784;&#120791;/&#120782;&#120791;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED SHOW NAME INTO ESP PAGE
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED SHOW ALLIES INTO ESP PAGE
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED DETECTION STANDING, CROUCHED, PRONE FOR ESP
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED VSYNC INTO SETTINGS PAGE
+
+✅ GLOBAL ADDRESS, OFFSETS REWORKED
+✅ MAJOR BUG FIXES
+✅ EDITED FOCUSED WINDOWS ANALIZING CHECK
+✅ EDITED AND UPGRADING CONFIG.INI
+✅ IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+✅ OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED DISTANCE CALCULATION FOR ESP DISTANCE</span>
+
+                                <span class="chatlog__edited-timestamp" title="29-Sep-21 06:48 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="emoji emoji--small" alt="&#128077;" src="https://twemoji.maxcdn.com/2/svg/1f44d.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">18</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">30-Sep-21 04:53 AM</span>
+
+            <div class="chatlog__message " data-message-id="892967446963683349" id="message-892967446963683349" title="Message sent: 30-Sep-21 04:53 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119826;&#119822;&#119813;&#119827;&#119830;&#119808;&#119825;&#119812;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120783;.&#120782;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120785;&#120782;/&#120782;&#120791;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED ANTI BLINKING ESP
+
+✅ EDITED SECURITY LEVEL
+✅ IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+✅ OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS</span>
+
+                                <span class="chatlog__edited-timestamp" title="14-Oct-21 12:57 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="emoji emoji--small" alt="&#128077;" src="https://twemoji.maxcdn.com/2/svg/1f44d.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">20</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">14-Oct-21 12:52 PM</span>
+
+            <div class="chatlog__message " data-message-id="898161324385775648" id="message-898161324385775648" title="Message sent: 14-Oct-21 12:52 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119826;&#119822;&#119813;&#119827;&#119830;&#119808;&#119825;&#119812;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120783;.&#120783;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120783;&#120786;/&#120783;&#120782;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED PRIORITY AIMBOT
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED AIM FOV CUSTOMIZE COLOR
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED VISIBLE TEXT CUSTOMIZE COLOR
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED ESP TEXT CUSTOMIZE SIZE
+
+✅ EDITED TARGET AIMBOT
+✅ EDITED AIMBOT FOV
+✅ EDITED AUTO FIRE FOR SEMI AUTO WEAPON
+✅ EDITED AND UPGRADING CONFIG.INI
+✅ EDITED INFORMATION MESSAGES
+✅ EDITED DETECTION TEAM COLOR FOR SNAPLINE
+✅ EDITED PRESET CONFIG
+✅ GLOBAL AIMBOT REWORKED
+✅ IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+✅ OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+✅ EDITED SECURITY LEVEL
+
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED A BUG WITH MENU DO NOT APPEAR PROPERLY
+
+<img loading="lazy" class="emoji " alt="🟥" title="red_square" src="https://twemoji.maxcdn.com/2/svg/1f7e5.svg"> REMOVED REFRESH INTO SETTINGS MENU</span>
+
+                                <span class="chatlog__edited-timestamp" title="14-Oct-21 12:57 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="emoji emoji--small" alt="&#128077;" src="https://twemoji.maxcdn.com/2/svg/1f44d.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">49</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">24-Oct-21 06:22 PM</span>
+
+            <div class="chatlog__message " data-message-id="901868205251911780" id="message-901868205251911780" title="Message sent: 24-Oct-21 06:22 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119826;&#119822;&#119813;&#119827;&#119830;&#119808;&#119825;&#119812;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120783;.&#120784;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120784;&#120786;/&#120783;&#120782;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED MENU COLORS
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED PROFILES EDITORS
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED BORDER BOX FORM CUSTOMIZE COLOR
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> ADDED SHOW ALLIES CUSTOMIZE COLOR
+
+✅ EDITED PRESET CONFIG
+✅ EDITED CROUCH VALUE
+✅ EDITED AND UPGRADING CONFIG.INI
+✅ EDITED INFORMATION MESSAGES
+✅ IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+✅ EDITED SECURITY LEVEL
+
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED A BUG WITH AIMBOT WHEN YOU PRESS YOUR SPECIFIED KEY
+
+<img loading="lazy" class="emoji " alt="🟥" title="red_square" src="https://twemoji.maxcdn.com/2/svg/1f7e5.svg"> REMOVED ESP TEXT CUSTOMIZE COLOR</span>
+
+                                <span class="chatlog__edited-timestamp" title="24-Oct-21 06:35 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="fire">
+                                <img class="emoji emoji--small" alt="&#128293;" src="https://twemoji.maxcdn.com/2/svg/1f525.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">41</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">07-Nov-21 03:53 AM</span>
+
+            <div class="chatlog__message " data-message-id="906738161693130842" id="message-906738161693130842" title="Message sent: 07-Nov-21 03:53 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119819;&#119808;&#119828;&#119821;&#119810;&#119815;&#119812;&#119825;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120782;.&#120786;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120782;&#120789;/&#120783;&#120783;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+✅ EDITED DESIGN
+✅ EDITED INFORMATION MESSAGES
+✅ EDITED SECURITY LEVEL</span>
+
+                                <span class="chatlog__edited-timestamp" title="07-Nov-21 03:53 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="ballot_box_with_check">
+                                <img class="emoji emoji--small" alt="☑️" src="https://twemoji.maxcdn.com/2/svg/2611.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">30</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/798307015121567744/03c3b799ccc3d4c219d715ceecdf1e2f.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Probably#9685" data-user-id="798307015121567744" style="color: rgb(231,255,0)">Probably</span>
+
+
+        <span class="chatlog__timestamp">16-Dec-21 03:50 PM</span>
+
+            <div class="chatlog__message " data-message-id="921051760540409906" id="message-921051760540409906" title="Message sent: 16-Dec-21 03:50 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119819;&#119808;&#119828;&#119821;&#119810;&#119815;&#119812;&#119825;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120782;.&#120787;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120783;&#120788;/&#120783;&#120784;/&#120784;&#120782;&#120784;&#120783;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> SOFTWARE PROTECTION CODE
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> PREPARING FUNCTION AC BYPASS FOR PREMIUM USERS
+
+✅ EDITED DESIGN
+✅ GLOBAL CODE OPTIMIZATION / CLEANUP
+✅ OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+✅ EDITED SECURITY LEVEL
+
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED SOME BUGS OCCURING ON LAUNCHER STARTUP</span>
+
+                                <span class="chatlog__edited-timestamp" title="03-Jan-22 02:35 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="emoji emoji--small" alt="&#128077;" src="https://twemoji.maxcdn.com/2/svg/1f44d.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">127</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/798307015121567744/03c3b799ccc3d4c219d715ceecdf1e2f.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Probably#9685" data-user-id="798307015121567744" style="color: rgb(231,255,0)">Probably</span>
+
+
+        <span class="chatlog__timestamp">13-Feb-22 03:53 AM</span>
+
+            <div class="chatlog__message " data-message-id="942252117983395891" id="message-942252117983395891" title="Message sent: 13-Feb-22 03:53 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> 
+
+<div class="pre pre--multiline language-css">[&#119819;&#119808;&#119828;&#119821;&#119810;&#119815;&#119812;&#119825;]</div>
+<div class="pre pre--multiline language-md"># [&#120297;&#120280;&#120293;&#120294;&#120284;&#120290;&#120289;: &#120783;.&#120782;.&#120782;.&#120788;]
+# [&#120279;&#120276;&#120295;&#120280;: &#120813;&#120815;/&#120812;&#120814;/&#120784;&#120782;&#120784;&#120784;]</div>
+<div class="pre pre--multiline language-diff">- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #&#128229;╿&#120279;&#120290;&#120298;&#120289;&#120287;&#120290;&#120276;&#120279;</div>
+
+[<img loading="lazy" class="emoji " alt="𝐂" title="𝐂" src="https://twemoji.maxcdn.com/2/svg/1d402.svg"><img loading="lazy" class="emoji " alt="𝐇" title="𝐇" src="https://twemoji.maxcdn.com/2/svg/1d407.svg"><img loading="lazy" class="emoji " alt="𝐀" title="𝐀" src="https://twemoji.maxcdn.com/2/svg/1d400.svg"><img loading="lazy" class="emoji " alt="𝐍" title="𝐍" src="https://twemoji.maxcdn.com/2/svg/1d40d.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg"><img loading="lazy" class="emoji " alt="𝐄" title="𝐄" src="https://twemoji.maxcdn.com/2/svg/1d404.svg"><img loading="lazy" class="emoji " alt="𝐋" title="𝐋" src="https://twemoji.maxcdn.com/2/svg/1d40b.svg"><img loading="lazy" class="emoji " alt="𝐎" title="𝐎" src="https://twemoji.maxcdn.com/2/svg/1d40e.svg"><img loading="lazy" class="emoji " alt="𝐆" title="𝐆" src="https://twemoji.maxcdn.com/2/svg/1d406.svg">]
+
+<img loading="lazy" class="emoji " alt="🆕" title="new" src="https://twemoji.maxcdn.com/2/svg/1f195.svg"> PREPARING FUNCTION MW3 FOR PREMIUM USERS
+
+✅ EDITED DESIGN
+✅ GLOBAL CODE OPTIMIZATION / CLEANUP
+✅ OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+
+<img loading="lazy" class="emoji " alt="🔧" title="wrench" src="https://twemoji.maxcdn.com/2/svg/1f527.svg"> FIXED SOME BUGS OCCURING ON LAUNCHER STARTUP</span>
+
+                                <span class="chatlog__edited-timestamp" title="13-Feb-22 02:31 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="cooldoge">
+                                <img class="emoji emoji--small" alt="cooldoge" src="https://cdn.discordapp.com/emojis/935201524747993198.gif" loading="lazy">
+                                <span class="chatlog__reaction-count">16</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 12 message(s)</div>
+</div>
+
+</body>
+
+</html>
