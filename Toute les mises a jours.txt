@@ -1,0 +1,276 @@
+:new: 
+:white_check_mark: 
+:wrench: 
+:red_square: 
+:red_circle: 
+
+```fix
+```
+
+
+LOG DE TOUTE LES MISES A JOURS:
+
+@everyone 
+
+```css
+[𝐒𝐎𝐅𝐓𝐖𝐀𝐑𝐄]
+```
+```md
+# [𝗩𝗘𝗥𝗦𝗜𝗢𝗡: 𝟏.𝟎.𝟎.𝟓]
+# [𝗗𝗔𝗧𝗘: 𝟏𝟕/𝟎𝟗/𝟐𝟎𝟐𝟏]```
+```diff
+- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #📥╿𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+```
+
+[𝐂𝐇𝐀𝐍𝐆𝐄𝐋𝐎𝐆]
+
+:white_check_mark: IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+:white_check_mark: GLOBAL CODE OPTIMIZATION / CLEANUP
+:white_check_mark: EDITED AND UPGRADING CONFIG.INI
+:white_check_mark: MAJOR BUG FIXES
+:white_check_mark: OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+:white_check_mark: SWITCHING HARDWARE ACCELERATION GRAPHICS FOR BEST OPTIMIZATION
+
+
+
+@everyone 
+
+```css
+[𝐒𝐎𝐅𝐓𝐖𝐀𝐑𝐄]
+```
+```md
+# [𝗩𝗘𝗥𝗦𝗜𝗢𝗡: 𝟏.𝟎.𝟎.𝟔]
+# [𝗗𝗔𝗧𝗘: 𝟐𝟏/𝟎𝟗/𝟐𝟎𝟐𝟏]```
+```diff
+- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #📥╿𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+```
+
+[𝐂𝐇𝐀𝐍𝐆𝐄𝐋𝐎𝐆]
+
+:new: ADDED NEW DRAWING FORM FOR ESP
+
+:white_check_mark: EDITED AIMBOT FOV CIRCLE SIZE
+:white_check_mark: MAJOR BUG FIXES
+:white_check_mark: EDITED SECURITY LEVEL
+:white_check_mark: GLOBAL CODE OPTIMIZATION / CLEANUP
+
+:wrench: FIXED ESP NOT HIDE PROPERLY
+:wrench: FIXED DISTANCE CALCULATION FOR ESP DISTANCE
+
+
+
+
+@everyone 
+
+```css
+[𝐒𝐎𝐅𝐓𝐖𝐀𝐑𝐄]
+```
+```md
+# [𝗩𝗘𝗥𝗦𝗜𝗢𝗡: 𝟏.𝟎.𝟎.𝟕]
+# [𝗗𝗔𝗧𝗘: 𝟐𝟏/𝟎𝟗/𝟐𝟎𝟐𝟏]```
+```diff
+- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #📥╿𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+```
+
+[𝐂𝐇𝐀𝐍𝐆𝐄𝐋𝐎𝐆]
+
+:new: ADDED VSAT INTO MISC PAGE
+:new: ADDED MISC PAGE FOR FREE VERSION
+
+:white_check_mark: EDITED CROSSHAIR PAGE TO MISC PAGE
+
+
+
+
+@everyone 
+
+```css
+[𝐋𝐀𝐔𝐍𝐂𝐇𝐄𝐑]
+```
+```md
+# [𝗩𝗘𝗥𝗦𝗜𝗢𝗡: 𝟏.𝟎.𝟎.𝟑]
+# [𝗗𝗔𝗧𝗘: 𝟐𝟒/𝟎𝟗/𝟐𝟎𝟐𝟏]```
+```diff
+- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #📥╿𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+```
+
+[𝐂𝐇𝐀𝐍𝐆𝐄𝐋𝐎𝐆]
+
+:new: UPDATE PREVENTION CHECK
+
+:white_check_mark: GLOBAL CODE OPTIMIZATION / CLEANUP
+:white_check_mark: OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+
+:wrench: FIXED SOME BUGS OCCURING ON LAUNCHER STARTUP
+
+
+@everyone 
+
+```css
+[𝐒𝐎𝐅𝐓𝐖𝐀𝐑𝐄]
+```
+```md
+# [𝗩𝗘𝗥𝗦𝗜𝗢𝗡: 𝟏.𝟎.𝟎.𝟖]
+# [𝗗𝗔𝗧𝗘: 𝟐𝟒/𝟎𝟗/𝟐𝟎𝟐𝟏]```
+```diff
+- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #📥╿𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+```
+
+[𝐂𝐇𝐀𝐍𝐆𝐄𝐋𝐎𝐆]
+
+:new: ADDED  FOCUSED WINDOWS ANALIZING CHECK
+
+:white_check_mark: EDITED PRESET CONFIG
+:white_check_mark: EDITED SECURITY LEVEL
+:white_check_mark: CODE OPTIMIZATION
+:white_check_mark: EDITED INFORMATION MESSAGES
+:white_check_mark: IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+:white_check_mark: OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+
+:wrench: FIXED MENU DO NOT APPEAR PROPERLY
+:wrench: FIXED A BUG WITH AIMBOT
+
+
+@everyone 
+
+```css
+[𝐒𝐎𝐅𝐓𝐖𝐀𝐑𝐄]
+```
+```md
+# [𝗩𝗘𝗥𝗦𝗜𝗢𝗡: 𝟏.𝟎.𝟎.𝟗]
+# [𝗗𝗔𝗧𝗘: 𝟐𝟗/𝟎𝟗/𝟐𝟎𝟐𝟏]```
+```diff
+- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #📥╿𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+```
+
+[𝐂𝐇𝐀𝐍𝐆𝐄𝐋𝐎𝐆]
+
+:new: ADDED SHOW NAME INTO ESP PAGE
+:new: ADDED SHOW ALLIES INTO ESP PAGE
+:new: ADDED DETECTION STANDING, CROUCHED, PRONE FOR ESP
+:new: ADDED VSYNC INTO SETTINGS PAGE
+
+:white_check_mark: GLOBAL ADDRESS, OFFSETS REWORKED
+:white_check_mark: MAJOR BUG FIXES
+:white_check_mark: EDITED FOCUSED WINDOWS ANALIZING CHECK
+:white_check_mark: EDITED AND UPGRADING CONFIG.INI
+:white_check_mark: IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+:white_check_mark: OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+
+:wrench: FIXED DISTANCE CALCULATION FOR ESP DISTANCE
+
+
+@everyone 
+
+```css
+[𝐒𝐎𝐅𝐓𝐖𝐀𝐑𝐄]
+```
+```md
+# [𝗩𝗘𝗥𝗦𝗜𝗢𝗡: 𝟏.𝟎.𝟏.𝟎]
+# [𝗗𝗔𝗧𝗘: 𝟑𝟎/𝟎𝟗/𝟐𝟎𝟐𝟏]```
+```diff
+- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #📥╿𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+```
+
+[𝐂𝐇𝐀𝐍𝐆𝐄𝐋𝐎𝐆]
+
+:new: ADDING ANTI BLINKING ESP
+
+:white_check_mark: EDITED SECURITY LEVEL
+:white_check_mark: IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+:white_check_mark: OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+
+
+
+@everyone 
+
+```css
+[𝐒𝐎𝐅𝐓𝐖𝐀𝐑𝐄]
+```
+```md
+# [𝗩𝗘𝗥𝗦𝗜𝗢𝗡: 𝟏.𝟎.𝟏.𝟏]
+# [𝗗𝗔𝗧𝗘: 𝟏𝟒/𝟏𝟎/𝟐𝟎𝟐𝟏]```
+```diff
+- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #📥╿𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+```
+
+[𝐂𝐇𝐀𝐍𝐆𝐄𝐋𝐎𝐆]
+
+:new: ADDED PRIORITY AIMBOT
+:new: ADDED AIM FOV CUSTOMIZE COLOR
+:new: ADDED VISIBLE TEXT CUSTOMIZE COLOR
+:new: ADDED ESP TEXT CUSTOMIZE SIZE
+
+:white_check_mark: EDITED TARGET AIMBOT
+:white_check_mark: EDITED AIMBOT FOV
+:white_check_mark: EDITED AUTO FIRE FOR SEMI AUTO WEAPON
+:white_check_mark: EDITED AND UPGRADING CONFIG.INI
+:white_check_mark: EDITED INFORMATION MESSAGES
+:white_check_mark: EDITED DETECTION TEAM COLOR FOR SNAPLINE
+:white_check_mark: EDITED PRESET CONFIG
+:white_check_mark: GLOBAL AIMBOT REWORKED
+:white_check_mark: IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+:white_check_mark: OPTIMIZATIONS STABILITY IN CERTAIN SITUATIONS
+:white_check_mark: EDITED SECURITY LEVEL
+
+:wrench: FIXED A BUG WITH MENU DO NOT APPEAR PROPERLY
+
+:red_square: REMOVED REFRESH INTO SETTINGS MENU
+
+
+@everyone 
+
+```css
+[𝐒𝐎𝐅𝐓𝐖𝐀𝐑𝐄]
+```
+```md
+# [𝗩𝗘𝗥𝗦𝗜𝗢𝗡: 𝟏.𝟎.𝟏.𝟐]
+# [𝗗𝗔𝗧𝗘: 𝟐𝟒/𝟏𝟎/𝟐𝟎𝟐𝟏]```
+```diff
+- 【﻿ＩＮＦＯ】
+
+- YOU NEED TO DOWNLOAD THE LAST VERSION LAUNCHER.EXE INTO #📥╿𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+
+```
+
+[𝐂𝐇𝐀𝐍𝐆𝐄𝐋𝐎𝐆]
+
+:new: ADDED MENU COLORS
+:new: ADDED PROFILES EDITORS
+:new: ADDED BORDER BOX FORM CUSTOMIZE COLOR
+:new: ADDED SHOW ALLIES CUSTOMIZE COLOR
+
+:white_check_mark: EDITED PRESET CONFIG
+:white_check_mark: EDITED CROUCH VALUE
+:white_check_mark: EDITED AND UPGRADING CONFIG.INI
+:white_check_mark: EDITED INFORMATION MESSAGES
+:white_check_mark: IMPROVED GLOBAL METHODS + CLEAN UP DUPES
+:white_check_mark: EDITED SECURITY LEVEL
+
+:wrench: FIXED A BUG WITH AIMBOT WHEN YOU PRESS YOUR SPECIFIED KEY
+
+:red_square: REMOVED ESP TEXT CUSTOMIZE COLOR

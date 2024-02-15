@@ -1,0 +1,26 @@
+Main VECR Server Invite: https://discord.gg/d2dCpcGRqu
+
+#1 Open A Ticket On Our Discord to Request Your "Token"
+
+#2 Then Open the LAUNCHER
+
+#3 Click "GET UPGRADE"
+
+#4 Click "Copy" at the top right then visit http://reset.vecrproject.com/
+
+#5 Paste your HWID that you copied from the "Greenshot.exe" 
+
+#6 Then Paste the "Previous HWID" You recieved from us
+ 
+#7 Paste your "Token" then click the orange arrow to apply
+
+#8 Go back to the "Greenshot.exe" and click "Register"
+
+#9 Enter your "Token" and your "Discord ID" then your email and click save.
+
+
+
+Discord iD Example: 520258876051249664
+
+If you cant find your discord iD enable "Developer Mode" in advanced settings on discord
+then Right click on your profile in a server and click "Copy ID"
